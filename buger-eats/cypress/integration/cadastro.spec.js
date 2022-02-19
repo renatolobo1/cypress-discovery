@@ -6,41 +6,41 @@ describe('Cadastro', () =>{
     cy.get('a[href="/deliver"]').click()
     cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para  fazer entregas')
 
-    var entregador ={
-      nome: 'Renato Lobo',
+    var deliver ={
+      name: 'Renato Lobo',
       cpf: '04151444424',
       email: 'renatolobo_@hotmail.com',
       whatsapp: '991116266',
-      endereco: {
-        cep: '57035330',
-        rua: 'Rua Deputado José Lages',
-        numero: '0',
-        complemento: 'ap 02, bloco 07',
-        bairo: 'Ponta Verde',
-        cidade_uf: 'Maceió/AL'
+      address: {
+        postalcode: '57035330',
+        street: 'Rua Deputado José Lages',
+        number: '0',
+        details: 'ap 02, bloco 07',
+        district: 'Ponta Verde',
+        cyty_state: 'Maceió/AL'
       },
-      metodo_entrega: "Moto",
+     delivery_method: "Moto",
       cnh: 'motorista.png'
     }
 
-    cy.get('input[name = "name"]').type(entregador.nome)
-    cy.get('input[name = "cpf"]').type(entregador.cpf)
-    cy.get('input[name = "email"]').type(entregador.email)
-    cy.get('input[name = "whatsapp"]').type(entregador.whatsapp)
+    cy.get('input[name = "name"]').type(deliver.name)
+    cy.get('input[name = "cpf"]').type(deliver.cpf)
+    cy.get('input[name = "email"]').type(deliver.email)
+    cy.get('input[name = "whatsapp"]').type(deliver.whatsapp)
 
-    cy.get('input[name ="postalcode"]').type(entregador.endereco.cep)
+    cy.get('input[name ="postalcode"]').type(deliver.address.postalcode)
     cy.get('input[type=button][value="Buscar CEP"]').click()
 
-    cy.get('input[name="address-number"]').type(entregador.endereco.numero)
-    cy.get('input[name="address-details"]').type(entregador.endereco.complemento)
+    cy.get('input[name="address-number"]').type(deliver.address.number)
+    cy.get('input[name="address-details"]').type(deliver.address.details)
 
-    cy.get('input[name="address"]').should('have.value', entregador.endereco.rua)
-    cy.get('input[name="district"]').should('have.value', entregador.endereco.bairo)
-    cy.get('input[name="city-uf"]').should('have.value', entregador.endereco.cidade_uf)
+    cy.get('input[name="address"]').should('have.value', deliver.address.street)
+    cy.get('input[name="district"]').should('have.value', deliver.address.district)
+    cy.get('input[name="city-uf"]').should('have.value', deliver.address.cyty_state)
 
-    cy.contains('.delivery-method li', entregador.metodo_entrega).click()
+    cy.contains('.delivery-method li', deliver.delivery_method).click()
 
-    cy.get('.dropzone  input[accept^="image"]').attachFile('/images/' + entregador.cnh)
+    cy.get('.dropzone input[accept^="image"]').attachFile('/images/' + deliver.cnh)
 
     cy.get('form button[type="submit"]').click()
 
@@ -55,41 +55,41 @@ describe('Cadastro', () =>{
     cy.get('a[href="/deliver"]').click()
     cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para  fazer entregas')
 
-    var entregador ={
-      nome: 'Renato Lobo',
+    var deliver ={
+      name: 'Renato Lobo',
       cpf: '041.51444424',
       email: 'renatolobo_@hotmail.com',
       whatsapp: '991116266',
-      endereco: {
-        cep: '57035330',
-        rua: 'Rua Deputado José Lages',
-        numero: '0',
-        complemento: 'ap 02, bloco 07',
-        bairo: 'Ponta Verde',
-        cidade_uf: 'Maceió/AL'
+      address: {
+        postalcode: '57035330',
+        street: 'Rua Deputado José Lages',
+        number: '0',
+        details: 'ap 02, bloco 07',
+        district: 'Ponta Verde',
+        cyty_state: 'Maceió/AL'
       },
-      metodo_entrega: "Moto",
+     delivery_method: "Moto",
       cnh: 'motorista.png'
     }
 
-    cy.get('input[name = "name"]').type(entregador.nome)
-    cy.get('input[name = "cpf"]').type(entregador.cpf)
-    cy.get('input[name = "email"]').type(entregador.email)
-    cy.get('input[name = "whatsapp"]').type(entregador.whatsapp)
+    cy.get('input[name = "name"]').type(deliver.name)
+    cy.get('input[name = "cpf"]').type(deliver.cpf)
+    cy.get('input[name = "email"]').type(deliver.email)
+    cy.get('input[name = "whatsapp"]').type(deliver.whatsapp)
 
-    cy.get('input[name ="postalcode"]').type(entregador.endereco.cep)
+    cy.get('input[name ="postalcode"]').type(deliver.address.postalcode)
     cy.get('input[type=button][value="Buscar CEP"]').click()
 
-    cy.get('input[name="address-number"]').type(entregador.endereco.numero)
-    cy.get('input[name="address-details"]').type(entregador.endereco.complemento)
+    cy.get('input[name="address-number"]').type(deliver.address.number)
+    cy.get('input[name="address-details"]').type(deliver.address.details)
 
-    cy.get('input[name="address"]').should('have.value', entregador.endereco.rua)
-    cy.get('input[name="district"]').should('have.value', entregador.endereco.bairo)
-    cy.get('input[name="city-uf"]').should('have.value', entregador.endereco.cidade_uf)
+    cy.get('input[name="address"]').should('have.value', deliver.address.street)
+    cy.get('input[name="district"]').should('have.value', deliver.address.district)
+    cy.get('input[name="city-uf"]').should('have.value', deliver.address.cyty_state)
 
-    cy.contains('.delivery-method li', entregador.metodo_entrega).click()
+    cy.contains('.delivery-method li', deliver.delivery_method).click()
 
-    cy.get('.dropzone  input[accept^="image"]').attachFile('/images/' + entregador.cnh)
+    cy.get('.dropzone input[accept^="image"]').attachFile('/images/' + deliver.cnh)
 
     cy.get('form button[type="submit"]').click()
 
