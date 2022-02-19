@@ -19,7 +19,8 @@ describe('Cadastro', () =>{
         bairo: 'Ponta Verde',
         cidade_uf: 'Maceió/AL'
       },
-      metodo_entrega: "Moto"
+      metodo_entrega: "Moto",
+      cnh: 'motorista.png'
     }
 
     cy.get('input[name = "name"]').type(entregador.nome)
@@ -38,5 +39,7 @@ describe('Cadastro', () =>{
     cy.get('input[name="city-uf"]').should('have.value', entregador.endereco.cidade_uf)
 
     cy.contains('.delivery-method li', entregador.metodo_entrega).click()
+
+    cy.get('.dropzone  input[accept^="image"]').attachFile('/images/' + entregador.cnh)
   })
 })
