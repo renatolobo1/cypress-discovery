@@ -1,4 +1,4 @@
-import SignupPage from '../pages/SignupPage'
+import signup from '../pages/SignupPage'
 
 describe('Cadastro', () =>{
 
@@ -36,9 +36,7 @@ describe('Cadastro', () =>{
       },
      delivery_method: "Moto",
       cnh: 'motorista.png'
-    }
-
-    var signup = new SignupPage()
+    }    
 
     signup.go()
     signup.fillForm(deliver)
@@ -49,8 +47,7 @@ describe('Cadastro', () =>{
     
   })
 
-  it('Cpf Invalido', () =>{
-    
+  it('Cpf Invalido', () =>{    
 
     var deliver ={
       name: 'Renato Lobo',
@@ -68,8 +65,6 @@ describe('Cadastro', () =>{
      delivery_method: "Moto",
       cnh: 'motorista.png'
     }
-
-    var signup = new SignupPage()
 
     signup.go()
     signup.fillForm(deliver)
