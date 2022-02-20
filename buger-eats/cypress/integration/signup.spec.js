@@ -1,6 +1,6 @@
 import signup from '../pages/SignupPage'
 
-describe('Cadastro', () => {
+describe('Signup', () => {
 
   // before(function() {
   //   cy.log('Tudo aqui é executado uma única vez ANTES de TODOS os casos de testes')
@@ -24,7 +24,7 @@ describe('Cadastro', () => {
     })
   })
 
-  it('Seja um entregador', function () {
+  it('Use shold be deliver', function () {
 
     signup.go()
     signup.fillForm(this.deliver.signup)
@@ -35,7 +35,7 @@ describe('Cadastro', () => {
 
   })
 
-  it('Cpf Invalido', function () {
+  it('Incorrect document', function () {
 
     signup.go()
     signup.fillForm(this.deliver.cpf_inv)
